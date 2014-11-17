@@ -52,6 +52,7 @@ game.resources = [
     {name: "new", type:"image", src: "data/img/new.png"},
     {name: "share", type:"image", src: "data/img/share.png"},
     {name: "tweet", type:"image", src: "data/img/tweet.png"},
+    {name: "swagfaat", type:"image", src: "data/img/swagfaat.png"},
     // sounds
     {name: "theme", type: "audio", src: "data/bgm/"},
     {name: "hit", type: "audio", src: "data/sfx/"},
@@ -61,7 +62,7 @@ game.resources = [
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = me.loader.getImage('clumsy');
+        settings.image = me.loader.getImage('swagfaat');
         settings.width = 85;
         settings.height = 60;
         settings.spritewidth = 85;
