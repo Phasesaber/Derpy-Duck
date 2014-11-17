@@ -4,7 +4,8 @@ var game = {
         steps: 0,
         start: false,
         newHiScore: false,
-        muted: false
+        muted: true,
+        paused: false
     },
 
     "onload": function() {
@@ -26,6 +27,10 @@ var game = {
 
         me.input.bindKey(me.input.KEY.SPACE, "fly", true);
         me.input.bindKey(me.input.KEY.M, "mute", true);
+
+        // trying to add pause button
+        me.input.bindKey(me.input.KEY.P, "pause", true);
+
         me.input.bindPointer(me.input.KEY.SPACE);
 
         me.pool.register("clumsy", BirdEntity);
@@ -93,6 +98,12 @@ var BirdEntity = me.ObjectEntity.extend({
     update: function(dt) {
         // mechanics
         if (!game.data.start) {
+            return this.parent(dt);
+        }
+        if (me.input.isKeyPressed('pause')) {
+            game.data.paused = !game.data.paused;
+        }
+        if (game.data.paused){
             return this.parent(dt);
         }
         if (me.input.isKeyPressed('fly')) {
@@ -185,6 +196,9 @@ var PipeEntity = me.ObjectEntity.extend({
         if (!game.data.start) {
             return this.parent(dt);
         }
+        if (game.data.paused){
+            return this.parent(dt);
+        }
         this.pos.add(new me.Vector2d(-this.gravity * me.timer.tick, 0));
         if (this.pos.x < -148) {
             me.game.world.removeChild(this);
@@ -205,6 +219,9 @@ var PipeGenerator = me.Renderable.extend({
     },
 
     update: function(dt) {
+        if (game.data.paused){
+            return this.parent(dt);
+        }
         if (this.generate++ % this.pipeFrequency == 0) {
             var posY = Number.prototype.random(
                     me.video.getHeight() - 100,
@@ -272,6 +289,9 @@ var Ground = me.ObjectEntity.extend({
     update: function(dt) {
         // mechanics
         if (!game.data.start) {
+            return this.parent(dt);
+        }
+        if (game.data.paused){
             return this.parent(dt);
         }
         this.pos.add(this.accel);
