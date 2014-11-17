@@ -4,7 +4,7 @@ var game = {
         steps: 0,
         start: false,
         newHiScore: false,
-        muted: true,
+        muted: false,
         paused: false
     },
 
@@ -27,11 +27,9 @@ var game = {
 
         me.input.bindKey(me.input.KEY.SPACE, "fly", true);
         me.input.bindKey(me.input.KEY.M, "mute", true);
-
-        // trying to add pause button
         me.input.bindKey(me.input.KEY.P, "pause", true);
-
         me.input.bindPointer(me.input.KEY.SPACE);
+
 
         me.pool.register("clumsy", BirdEntity);
         me.pool.register("pipe", PipeEntity, true);
@@ -302,7 +300,6 @@ var Ground = me.ObjectEntity.extend({
     },
 
 });
-
 game.HUD = game.HUD || {};
 
 game.HUD.Container = me.ObjectContainer.extend({

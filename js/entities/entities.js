@@ -1,7 +1,7 @@
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = me.loader.getImage('clumsy');
+        settings.image = me.loader.getImage('swagfaat');
         settings.width = 85;
         settings.height = 60;
         settings.spritewidth = 85;
@@ -32,6 +32,12 @@ var BirdEntity = me.ObjectEntity.extend({
     update: function(dt) {
         // mechanics
         if (!game.data.start) {
+            return this.parent(dt);
+        }
+        if (me.input.isKeyPressed('pause')) {
+            game.data.paused = !game.data.paused;
+        }
+        if (game.data.paused){
             return this.parent(dt);
         }
         if (me.input.isKeyPressed('fly')) {
@@ -124,6 +130,9 @@ var PipeEntity = me.ObjectEntity.extend({
         if (!game.data.start) {
             return this.parent(dt);
         }
+        if (game.data.paused){
+            return this.parent(dt);
+        }
         this.pos.add(new me.Vector2d(-this.gravity * me.timer.tick, 0));
         if (this.pos.x < -148) {
             me.game.world.removeChild(this);
@@ -144,6 +153,9 @@ var PipeGenerator = me.Renderable.extend({
     },
 
     update: function(dt) {
+        if (game.data.paused){
+            return this.parent(dt);
+        }
         if (this.generate++ % this.pipeFrequency == 0) {
             var posY = Number.prototype.random(
                     me.video.getHeight() - 100,
@@ -211,6 +223,9 @@ var Ground = me.ObjectEntity.extend({
     update: function(dt) {
         // mechanics
         if (!game.data.start) {
+            return this.parent(dt);
+        }
+        if (game.data.paused){
             return this.parent(dt);
         }
         this.pos.add(this.accel);

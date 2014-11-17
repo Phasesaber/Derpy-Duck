@@ -4,7 +4,8 @@ var game = {
         steps: 0,
         start: false,
         newHiScore: false,
-        muted: false
+        muted: false,
+        paused: false
     },
 
     "onload": function() {
@@ -26,7 +27,9 @@ var game = {
 
         me.input.bindKey(me.input.KEY.SPACE, "fly", true);
         me.input.bindKey(me.input.KEY.M, "mute", true);
+        me.input.bindKey(me.input.KEY.P, "pause", true);
         me.input.bindPointer(me.input.KEY.SPACE);
+
 
         me.pool.register("clumsy", BirdEntity);
         me.pool.register("pipe", PipeEntity, true);
