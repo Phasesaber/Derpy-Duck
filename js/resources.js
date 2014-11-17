@@ -13,6 +13,7 @@ game.resources = [
     {name: "share", type:"image", src: "data/img/share.png"},
     {name: "tweet", type:"image", src: "data/img/tweet.png"},
     {name: "swagfaat", type:"image", src: "data/img/swagfaat.png"},
+    {name: "alimesbah", type:"image", src: "data/img/alimesbah.png"},
     // sounds
     {name: "theme", type: "audio", src: "data/bgm/"},
     {name: "hit", type: "audio", src: "data/sfx/"},

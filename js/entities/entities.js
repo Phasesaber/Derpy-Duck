@@ -1,7 +1,7 @@
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = me.loader.getImage('swagfaat');
+        settings.image = me.loader.getImage('alimesbah');
         settings.width = 85;
         settings.height = 60;
         settings.spritewidth = 85;
