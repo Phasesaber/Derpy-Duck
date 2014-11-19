@@ -44,7 +44,17 @@ var game = {
 game.resources = [
     // images
     {name: "bg", type:"image", src: "data/img/bg.png"},
+    {name: "bg6", type:"image", src: "data/img/bg6.png"},
+    {name: "bg2", type:"image", src: "data/img/bg2.png"},
+    {name: "bg3", type:"image", src: "data/img/bg3.png"},
+    {name: "bg4", type:"image", src: "data/img/bg4.png"},
+    {name: "bg5", type:"image", src: "data/img/bg5.png"},
     {name: "clumsy", type:"image", src: "data/img/clumsy.png"},
+    {name: "clumsy2", type:"image", src: "data/img/clumsy2.png"},
+    {name: "clumsy3", type:"image", src: "data/img/clumsy3.png"},
+    {name: "clumsy4", type:"image", src: "data/img/clumsy4.png"},
+    {name: "clumsy5", type:"image", src: "data/img/clumsy5.png"},
+    {name: "clumsy6", type:"image", src: "data/img/clumsy6.png"},
     {name: "pipe", type:"image", src: "data/img/pipe.png"},
     {name: "logo", type:"image", src: "data/img/logo.png"},
     {name: "ground", type:"image", src: "data/img/ground.png"},
@@ -56,6 +66,7 @@ game.resources = [
     {name: "share", type:"image", src: "data/img/share.png"},
     {name: "tweet", type:"image", src: "data/img/tweet.png"},
     {name: "swagfaat", type:"image", src: "data/img/swagfaat.png"},
+    {name: "alimesbah", type:"image", src: "data/img/alimesbah.png"},
     // sounds
     {name: "theme", type: "audio", src: "data/bgm/"},
     {name: "hit", type: "audio", src: "data/sfx/"},
@@ -65,7 +76,25 @@ game.resources = [
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = me.loader.getImage('swagfaat');
+        var rand = Math.floor((Math.random() * 6) + 1);
+        if(rand == 1){
+            settings.image = me.loader.getImage('alimesbah');
+        }
+        else if(rand == 2){
+            settings.image = me.loader.getImage('clumsy2');
+        }
+        else if(rand == 3){
+            settings.image = me.loader.getImage('clumsy3');
+        }
+        else if (rand == 4){
+            settings.image = me.loader.getImage('clumsy4');
+        }
+        else if(rand == 5){
+            settings.image = me.loader.getImage('clumsy');
+        }
+        else if(rand == 6){
+            settings.image = me.loader.getImage('clumsy5');
+        }
         settings.width = 85;
         settings.height = 60;
         settings.spritewidth = 85;
@@ -519,7 +548,27 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.start = false;
         game.data.newHiscore = false;
 
-        me.game.world.addChild(new BackgroundLayer('bg', 1));
+
+        var rand = Math.floor((Math.random() * 6) + 1);
+        if(rand == 1){
+            me.game.world.addChild(new BackgroundLayer('bg', 1));
+        }
+        else if(rand == 2){
+            me.game.world.addChild(new BackgroundLayer('bg2', 1));
+        }
+        else if(rand == 3){
+            me.game.world.addChild(new BackgroundLayer('bg3', 1));
+        }
+        else if (rand == 4){
+            me.game.world.addChild(new BackgroundLayer('bg4', 1));
+        }
+        else if(rand == 5){
+            me.game.world.addChild(new BackgroundLayer('bg5', 1));
+        }
+        else if(rand == 6){
+            me.game.world.addChild(new BackgroundLayer('bg6', 1));
+        }
+        
 
         this.ground1 = new Ground(0, me.video.getHeight() - 96);
         this.ground2 = new Ground(me.video.getWidth(), me.video.getHeight() - 96);

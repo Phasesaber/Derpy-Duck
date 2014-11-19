@@ -1,7 +1,17 @@
 game.resources = [
     // images
     {name: "bg", type:"image", src: "data/img/bg.png"},
+    {name: "bg6", type:"image", src: "data/img/bg6.png"},
+    {name: "bg2", type:"image", src: "data/img/bg2.png"},
+    {name: "bg3", type:"image", src: "data/img/bg3.png"},
+    {name: "bg4", type:"image", src: "data/img/bg4.png"},
+    {name: "bg5", type:"image", src: "data/img/bg5.png"},
     {name: "clumsy", type:"image", src: "data/img/clumsy.png"},
+    {name: "clumsy2", type:"image", src: "data/img/clumsy2.png"},
+    {name: "clumsy3", type:"image", src: "data/img/clumsy3.png"},
+    {name: "clumsy4", type:"image", src: "data/img/clumsy4.png"},
+    {name: "clumsy5", type:"image", src: "data/img/clumsy5.png"},
+    {name: "clumsy6", type:"image", src: "data/img/clumsy6.png"},
     {name: "pipe", type:"image", src: "data/img/pipe.png"},
     {name: "logo", type:"image", src: "data/img/logo.png"},
     {name: "ground", type:"image", src: "data/img/ground.png"},

@@ -1,7 +1,25 @@
 var BirdEntity = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = me.loader.getImage('alimesbah');
+        var rand = Math.floor((Math.random() * 6) + 1);
+        if(rand == 1){
+            settings.image = me.loader.getImage('alimesbah');
+        }
+        else if(rand == 2){
+            settings.image = me.loader.getImage('clumsy2');
+        }
+        else if(rand == 3){
+            settings.image = me.loader.getImage('clumsy3');
+        }
+        else if (rand == 4){
+            settings.image = me.loader.getImage('clumsy4');
+        }
+        else if(rand == 5){
+            settings.image = me.loader.getImage('clumsy');
+        }
+        else if(rand == 6){
+            settings.image = me.loader.getImage('clumsy5');
+        }
         settings.width = 85;
         settings.height = 60;
         settings.spritewidth = 85;

@@ -19,7 +19,27 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.start = false;
         game.data.newHiscore = false;
 
-        me.game.world.addChild(new BackgroundLayer('bg', 1));
+
+        var rand = Math.floor((Math.random() * 6) + 1);
+        if(rand == 1){
+            me.game.world.addChild(new BackgroundLayer('bg', 1));
+        }
+        else if(rand == 2){
+            me.game.world.addChild(new BackgroundLayer('bg2', 1));
+        }
+        else if(rand == 3){
+            me.game.world.addChild(new BackgroundLayer('bg3', 1));
+        }
+        else if (rand == 4){
+            me.game.world.addChild(new BackgroundLayer('bg4', 1));
+        }
+        else if(rand == 5){
+            me.game.world.addChild(new BackgroundLayer('bg5', 1));
+        }
+        else if(rand == 6){
+            me.game.world.addChild(new BackgroundLayer('bg6', 1));
+        }
+        
 
         this.ground1 = new Ground(0, me.video.getHeight() - 96);
         this.ground2 = new Ground(me.video.getWidth(), me.video.getHeight() - 96);
