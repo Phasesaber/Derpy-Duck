@@ -141,17 +141,38 @@ var PipeEntity = me.ObjectEntity.extend({
         this.gravity = 5;
         this.updateTime = false;
         this.type = 'pipe';
+        this.tempY;
+        this.downDirectionFlag;
+        if(this.pos.y < 0){
+            this.tempY = this.pos.y + 1840; 
+        } else{
+            this.tempY = this.pos.y;
+        }
+        console.log(this.tempY);
+        if(this.tempY < 325){
+            this.downDirectionFlag = true;
+        }
+        else{
+            this.downDirectionFlag = false;
+        }
     },
 
     update: function(dt) {
         // mechanics
+    
         if (!game.data.start) {
             return this.parent(dt);
         }
         if (game.data.paused){
             return this.parent(dt);
         }
-        this.pos.add(new me.Vector2d(-this.gravity * me.timer.tick, 0));
+        if(this.downDirectionFlag){
+             this.pos.add(new me.Vector2d(-this.gravity * me.timer.tick, 0.5)); 
+        } else{
+            this.pos.add(new me.Vector2d(-this.gravity * me.timer.tick, -0.5)); 
+        }
+        
+        
         if (this.pos.x < -148) {
             me.game.world.removeChild(this);
         }
@@ -168,6 +189,7 @@ var PipeGenerator = me.Renderable.extend({
         this.pipeFrequency = 92;
         this.pipeHoleSize = 1240;
         this.posX = me.game.viewport.width;
+        this.posY;
     },
 
     update: function(dt) {
@@ -180,9 +202,14 @@ var PipeGenerator = me.Renderable.extend({
                     200
             );
             var posY2 = posY - me.video.getHeight() - this.pipeHoleSize;
+            this.posY = posY2;
             var pipe1 = new me.pool.pull("pipe", this.posX, posY);
             var pipe2 = new me.pool.pull("pipe", this.posX, posY2);
-            var hitPos = posY - 100;
+            if(posY < 325){
+                var hitPos = posY - 100;
+            } else {
+                var hitPos = posY - 150;
+            }
             var hit = new me.pool.pull("hit", this.posX, hitPos);
             pipe1.renderable.flipY();
             me.game.world.addChild(pipe1, 10);
