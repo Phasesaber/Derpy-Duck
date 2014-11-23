@@ -240,6 +240,9 @@ var HitEntity = me.ObjectEntity.extend({
     },
 
     update: function() {
+        if (game.data.paused){
+            return;
+        }
         // mechanics
         this.pos.add(this.ac);
         if (this.pos.x < -148) {
