@@ -88,7 +88,7 @@ var Share = me.GUI_Object.extend({
 
     onClick: function(event) {
         var shareText = 'Just made ' + game.data.steps + ' steps on Clumsy Bird! Can you beat me? Try online here!';
-        var url = 'http://ellisonleao.github.io/clumsy-bird/';
+        var url = 'http://ahdavies.github.io/clumsy-bird/';
         FB.ui(
             {
              method: 'feed',
@@ -98,7 +98,7 @@ var Share = me.GUI_Object.extend({
                     shareText
              ),
              link: url,
-             picture: 'http://ellisonleao.github.io/clumsy-bird/data/img/clumsy.png'
+             picture: 'http://ahdavies.github.io/clumsy-bird/data/img/clumsy.png'
             }
         );
         return false;
@@ -117,7 +117,7 @@ var Tweet = me.GUI_Object.extend({
 
     onClick: function(event) {
         var shareText = 'Just made ' + game.data.steps + ' steps on Clumsy Bird! Can you beat me? Try online here!';
-        var url = 'http://ellisonleao.github.io/clumsy-bird/';
+        var url = 'http://ahdavies.github.io/clumsy-bird/';
         var hashtags = 'clumsybird,melonjs'
         window.open('https://twitter.com/intent/tweet?text=' + shareText + '&hashtags=' + hashtags + '&count=' + url + '&url=' + url, 'Tweet!', 'height=300,width=400')
         return false;
