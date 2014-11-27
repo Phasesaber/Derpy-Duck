@@ -3,10 +3,11 @@ Clumsy Bird
 
 A MelonJS made "Flappy Bird" clone.
 This is a customized version of http://ellisonleao.github.io/clumsy-bird/
+
 Our contributions:
-	1. Pause functionality - press the 'P' key
-	2. Alternating backgrounds 
-	3. Moving pipes
+- **Pause functionality - press the 'P' key
+- **Alternating backgrounds 
+- **Moving pipes
 
 ![](http://i.imgur.com/Slbvt65.png)
 
