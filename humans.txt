@@ -3,7 +3,7 @@
 Developers: Amy Davies Emmett Tan, Rafaat Mir
 Site: https://ahdavies.github.io, https://github.com/ahdavies
 Twitter: @AmyDavies12
-Location: Curitiba, Brazil
+Location: Vancouver, Canada
 
 /* SITE */
 

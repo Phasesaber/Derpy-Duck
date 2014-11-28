@@ -448,18 +448,18 @@ var Share = me.GUI_Object.extend({
     },
 
     onClick: function(event) {
-        var shareText = 'Just made ' + game.data.steps + ' steps on Clumsy Bird! Can you beat me? Try online here!';
-        var url = 'http://ahdavies.github.io/clumsy-bird/';
+        var shareText = 'Just made ' + game.data.steps + ' steps on Derpy Duck! Can you beat me? Try online here!';
+        var url = 'http://ahdavies.github.io/Derpy-Duck/';
         FB.ui(
             {
              method: 'feed',
-             name: 'My Clumsy Bird Score!',
+             name: 'My Derpy Duck Score!',
              caption: "Share to your friends",
              description: (
                     shareText
              ),
              link: url,
-             picture: 'http://ahdavies.github.io/clumsy-bird/data/img/clumsy.png'
+             picture: 'http://ahdavies.github.io/Derpy-Duck/data/img/clumsy.png'
             }
         );
         return false;
@@ -477,9 +477,9 @@ var Tweet = me.GUI_Object.extend({
     },
 
     onClick: function(event) {
-        var shareText = 'Just made ' + game.data.steps + ' steps on Clumsy Bird! Can you beat me? Try online here!';
-        var url = 'http://ahdavies.github.io/clumsy-bird/';
-        var hashtags = 'clumsybird,melonjs'
+        var shareText = 'Just made ' + game.data.steps + ' steps on Derpy Duck! Can you beat me? Try online here!';
+        var url = 'http://ahdavies.github.io/Derpy-Duck/';
+        var hashtags = 'DerpyDuck,melonjs'
         window.open('https://twitter.com/intent/tweet?text=' + shareText + '&hashtags=' + hashtags + '&count=' + url + '&url=' + url, 'Tweet!', 'height=300,width=400')
         return false;
     }
