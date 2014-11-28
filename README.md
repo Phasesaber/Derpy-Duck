@@ -3,6 +3,7 @@ Clumsy Bird
 
 A MelonJS made "Flappy Bird" clone.
 This is a customized version of http://ellisonleao.github.io/clumsy-bird/
+Play online at http://ahdavies.github.io/Derpy-Duck/
 
 Our contributions:
 - Pause functionality - press the 'P' key
@@ -11,7 +12,6 @@ Our contributions:
 
 ![](http://i.imgur.com/Slbvt65.png)
 
-Play online at http://ahdavies.github.io/clumsy-bird/
 
 ## Running Locally
 
@@ -46,5 +46,3 @@ See [CUSTOMIZING](https://github.com/ellisonleao/clumsy-bird/blob/gh-pages/CUSTO
 - **Clippy Jam** by @jkeatinco - http://jkeatinco.github.io/
 
 If you made something with this code, please [share here](https://github.com/ellisonleao/clumsy-bird/issues/39) and i'll be happy to add your game into the list.
-
-Some thoughts about this code you can find on my blog post: http://ellisonleao.svbtle.com/clumsy-bird-an-open-source-flappy-bird-clone
