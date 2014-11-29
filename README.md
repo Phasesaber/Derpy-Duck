@@ -1,8 +1,9 @@
-Clumsy Bird
+Derpy Duck
 ===========
 
 A MelonJS made "Flappy Bird" clone.
 This is a customized version of http://ellisonleao.github.io/clumsy-bird/
+
 Play online at http://ahdavies.github.io/Derpy-Duck/
 
 Our contributions:
